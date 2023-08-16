@@ -1,5 +1,6 @@
 
 import { connectDb } from "@/helper/db";
+
 import { NextResponse } from "next/server";
 
 connectDb();
@@ -20,6 +21,6 @@ export function GET(){
 return NextResponse.json(courses);
 
 }
-// export function POST(){}
+
 // export function PUT(){}
 // export function DELETE(){}
