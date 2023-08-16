@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 // Define mongoose schemas
 const userSchema = new mongoose.Schema({
-    username: {type: String},
+    username: {type: String },
     email:{
       type: String,
       required:[true,"Email Required !!"],
+      unique:true,
     },
     password:{
       type: String,

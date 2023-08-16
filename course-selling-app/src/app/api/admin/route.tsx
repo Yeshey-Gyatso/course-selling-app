@@ -4,9 +4,30 @@ import { NextResponse } from "next/server";
 
 connectDb();
 
-export async function POST(request:Request,response:Response){
+export async function GET(request:Request,response:NextResponse){
+    let admins=[]
+    try {
+        admins = await Admin.find();
+       
+        }
 
-    const {username,password} =await request.json();
+     catch (error) {
+        console.log(error);
+        console.log("failed to get the admins")
+        return NextResponse.json({
+            message:"failed to get users",
+            success:false
+        })
+        
+        
+    }
+    return NextResponse.json(admins);   
+}
+
+
+export async function POST(request:Request,response:NextResponse){
+
+    const {username,password} =await  request.json();
 
     const admin=new Admin({
         username,
