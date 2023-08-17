@@ -3,7 +3,7 @@ import { Course } from "@/models";
 
 export const connectDb = async()=>{
     try {
-const {connection} =await mongoose.connect('mongodb+srv://yesheygyatso:qwer@cluster0.gtye3uq.mongodb.net/course-selling-app', { dbName: "course-selling-app" });
+const {connection} =await mongoose.connect('mongodb+srv://yesheygyatso:qwer@cluster0.gtye3uq.mongodb.net/', { dbName: "course-selling-app" });
        console.log(connection) 
        console.log("db connected .........")
 
