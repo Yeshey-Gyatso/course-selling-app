@@ -15,7 +15,10 @@ const userSchema = new mongoose.Schema({
   });
   
 const adminSchema = new mongoose.Schema({
-    username: {type: String},
+    username: {
+      type: String,
+      required:[true,"user name required !!"]        
+    },
     password: {
       type: String,
       required:[true,"Password Required !!"],
@@ -23,11 +26,29 @@ const adminSchema = new mongoose.Schema({
   });
   
 const courseSchema = new mongoose.Schema({
-    title:String,
-    description:String,
+    title:{
+      type:String,
+      required:true
+      },
+    description:{
+      type:String,
+      required:true
+      },
     price:Number,
+    addedDate:{
+      type:Date,
+      default:Date.now(),
+    },
     imageLink:String,
-    published:Boolean
+    published:Boolean,
+    status:{
+      type:String,
+      enum:["notpurchased","purchased"],
+      default:"notpurchased"
+    },
+    // userId:{
+    //   type: mongoose.Types.ObjectId,
+    // }
   });
 
 export const User = mongoose.models.User || mongoose.model('User', userSchema);

@@ -5,10 +5,10 @@ import { NextResponse } from "next/server";
 connectDb();
 
 export async function GET(request:Request,response:NextResponse){
-    let admins=[]
+    
     try {
-        admins = await Admin.find();
-       
+        const admins = await Admin.find();
+        return NextResponse.json(admins);
         }
 
      catch (error) {
@@ -21,7 +21,7 @@ export async function GET(request:Request,response:NextResponse){
         
         
     }
-    return NextResponse.json(admins);   
+       
 }
 
 

@@ -7,7 +7,7 @@ const {connection} =await mongoose.connect('mongodb+srv://yesheygyatso:qwer@clus
        console.log(connection) 
        console.log("db connected .........")
 
-    //    testing of course in db //////////////
+    //    testing of course in db
     //    const course=new Course({
     //     title:"cat",
     //     description:"it is a small cat",
