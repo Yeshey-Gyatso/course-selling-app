@@ -13,7 +13,7 @@ const AddCourse = () => {
     const [course,setCourse]=useState({
         title:"",
         description:"",
-        price:0,
+        price:null,
         imageLink:""
     })
 
@@ -27,6 +27,15 @@ const AddCourse = () => {
            toast.success("your task is added",{
             position:"top-center" 
            });
+           setCourse(
+            {
+                title:"",
+                description:"",
+                price:null,
+                imageLink:""
+            }
+           )
+
         } catch (error) {
             console.log(error)
             toast.error("Task is not added",{
