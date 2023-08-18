@@ -7,13 +7,16 @@ import { useState,useEffect } from 'react';
 import {  toast } from 'react-toastify';
 import { addCourse } from '@/services/courseService';
 
+const metadata={
+    title:"Add Course:JamStore"
+}
 
 const AddCourse = () => {
-
+    document.title=metadata.title;
     const [course,setCourse]=useState({
         title:"",
         description:"",
-        price:null,
+        price:NaN,
         imageLink:""
     })
 
@@ -31,7 +34,7 @@ const AddCourse = () => {
             {
                 title:"",
                 description:"",
-                price:null,
+                price:NaN,
                 imageLink:""
             }
            )
