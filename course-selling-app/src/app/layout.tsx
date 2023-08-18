@@ -2,6 +2,7 @@ import CustomNavbar from '@/components/CustomNavbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,7 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-cyan-500`}>
         <CustomNavbar/>
         <div>{children}</div>
-        <div><h1 className=' bg-red-200'>this is the footer</h1></div>
+        <Footer/>
         
         </body>
     </html>
