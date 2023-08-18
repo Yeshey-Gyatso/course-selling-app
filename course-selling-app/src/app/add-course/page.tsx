@@ -5,6 +5,7 @@ import loginSvg from "../assets/login.svg";
 import Image from 'next/image';
 import { useState,useEffect } from 'react';
 import { getAllJSDocTagsOfKind } from 'typescript';
+import { addCourse } from '@/services/courseService';
 
 
 const AddCourse = () => {
@@ -16,9 +17,17 @@ const AddCourse = () => {
         imageLink:""
     })
 
-    const handleaddCourse=(event:any)=>{
+    const handleaddCourse=async(event:any)=>{
         event.preventDefault();
         console.log(event)
+        //validation
+        try {
+           const result= addCourse(course)
+           console.log(result);
+        } catch (error) {
+            console.log(error)
+            
+        }
 
     }
   return (
@@ -104,7 +113,7 @@ const AddCourse = () => {
                      onChange={(e) => {
                         setCourse({
                             ...course,
-                            price:e.target.value
+                            price:parseInt(e.target.value)
                         })
                     }}
                     value={course.price}
