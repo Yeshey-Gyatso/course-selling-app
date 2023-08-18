@@ -4,7 +4,7 @@ import React from 'react';
 import loginSvg from "../assets/login.svg";
 import Image from 'next/image';
 import { useState,useEffect } from 'react';
-import { getAllJSDocTagsOfKind } from 'typescript';
+import {  toast } from 'react-toastify';
 import { addCourse } from '@/services/courseService';
 
 
@@ -22,11 +22,16 @@ const AddCourse = () => {
         console.log(event)
         //validation
         try {
-           const result= addCourse(course)
+           const result= await addCourse(course)
            console.log(result);
+           toast.success("your task is added",{
+            position:"top-center" 
+           });
         } catch (error) {
             console.log(error)
-            
+            toast.error("Task is not added",{
+                position:"top-center" 
+               });
         }
 
     }
