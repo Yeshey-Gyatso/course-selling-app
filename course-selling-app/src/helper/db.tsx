@@ -7,9 +7,11 @@ const {connection} =await mongoose.connect('mongodb+srv://yesheygyatso:qwer@clus
  { dbName: "course-selling-app" });
        console.log(connection) 
        console.log("db connected .........")
+    
 
    
     } catch (error) {
+        
         console.log("failed to connect database");
         console.log(error);
     }

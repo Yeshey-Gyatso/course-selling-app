@@ -1,4 +1,5 @@
 import { connectDb } from "@/helper/db";
+import { getResponseMessage } from "@/helper/error";
 import { Course } from "@/models";
 import { NextResponse } from "next/server";
 connectDb();
@@ -11,12 +12,14 @@ export async function GET(request:Request,response:NextResponse){
         }
 
      catch (error) {
-        console.log(error);
-        console.log("failed to get the courses from admin")
-        return NextResponse.json({
-            message:"failed to get courses from admin",
-            success:false
-        })
+
+        return getResponseMessage("error in getting data !!" ,404,false);
+        // console.log(error);
+        // console.log("failed to get the courses from admin")
+        // return NextResponse.json({
+        //     message:"failed to get courses from admin",
+        //     success:false
+        // })
         
         
     }
@@ -39,7 +42,7 @@ export async function POST(request:Request,response:NextResponse){
 
     });
  try {
-    const createdCourse =await course.save();
+    const createdCourse =await course.save(); 
 
     const response =NextResponse.json(course,{status:201})
     return response;
