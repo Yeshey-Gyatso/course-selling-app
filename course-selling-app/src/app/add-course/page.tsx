@@ -1,13 +1,26 @@
-"use client"
-import React from 'react'
+"use client";
+
+import React from 'react';
 import loginSvg from "../assets/login.svg";
 import Image from 'next/image';
+import { useState,useEffect } from 'react';
+import { getAllJSDocTagsOfKind } from 'typescript';
 
-export const metadata={
-    title:"Add Course: JamStore",
-}
 
 const AddCourse = () => {
+
+    const [course,setCourse]=useState({
+        title:"",
+        description:"",
+        price:0,
+        imageLink:""
+    })
+
+    const handleaddCourse=(event:any)=>{
+        event.preventDefault();
+        console.log(event)
+
+    }
   return (
     <div className=' grid grid-cols-12 justify-center'>
         <div className=' col-span-6 
@@ -23,7 +36,7 @@ const AddCourse = () => {
                 src={loginSvg}/>
             </div>
             <h1 className='text-3xl text-center '> Add your course</h1>
-            <form action="#!">
+            <form action="#!" onSubmit={handleaddCourse}>
                 {/* title */}
                 <div className=' mt-4'>
                     <label htmlFor="title" 
@@ -34,9 +47,16 @@ const AddCourse = () => {
                      font-medium  w-full p-3 rounded-3xl
                      bg-slate-500 focus:ring-gray-100
                      border border-gray-800  
-                     
                      '
+                     name='course_title'
                      id='course_title'
+                     onChange={(e) => {
+                        setCourse({
+                            ...course,
+                            title:e.target.value
+                        })
+                    }}
+                    value={course.title}
                      />
                 </div>
                 {/* description */}
@@ -52,6 +72,15 @@ const AddCourse = () => {
                      
                      '
                      id='course_description'
+                     name='course_description'
+                     
+                     onChange={(e) => {
+                        setCourse({
+                            ...course,
+                            description:e.target.value
+                        })
+                    }}
+                    value={course.description}
                      rows={3}
                      />
                 </div>
@@ -62,14 +91,23 @@ const AddCourse = () => {
                     <label htmlFor="price" 
                     className='  block text-sm mb-2'
                     >Price</label>
-                    <input  type="number"
+                    <input  
+                    type="number"
                      className=' 
                      font-medium  w-full p-3 rounded-3xl
                      bg-slate-500 focus:ring-gray-100
                      border border-gray-800  
-                     
                      '
                      id='course_price'
+                     name='course_price'
+                     
+                     onChange={(e) => {
+                        setCourse({
+                            ...course,
+                            price:e.target.value
+                        })
+                    }}
+                    value={course.price}
                      />
                 </div>
 
@@ -87,6 +125,15 @@ const AddCourse = () => {
                      
                      '
                      id='course_imageLink'
+                     name='course_imageLink'
+                     
+                     onChange={(e) => {
+                        setCourse({
+                            ...course,
+                            imageLink:e.target.value
+                        })
+                    }}
+                    value={course.imageLink}
                      />
                 </div>
 
@@ -97,7 +144,9 @@ const AddCourse = () => {
                      <button className=' bg-red-700 p-3 rounded-full
                      hover:bg-red-800 '>Clear</button>
                 </div>
-                
+                {
+                    JSON.stringify(course)
+                }
             </form>
 
         </div>
