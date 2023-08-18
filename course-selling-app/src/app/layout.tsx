@@ -19,7 +19,7 @@ export default function RootLayout({
   
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-cyan-500`}>
+      <body className={`${inter.className} bg-black`}>
         <CustomNavbar/>
         <div>{children}</div>
         <Footer/>
