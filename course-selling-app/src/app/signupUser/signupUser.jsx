@@ -14,7 +14,7 @@ const SignUpUser = () => {
   });
 
   const doSignup=async(event)=>{
-    event.prevent.default();
+    event.preventDefault();
   // input validation
   try {
     const result = await signUpapi(user);
@@ -118,10 +118,11 @@ const SignUpUser = () => {
              {/* button */}
              <div className='flex justify-center gap-x-4 mt-4'>
                     <button 
+                    type='submit'
                     className=' bg-blue-700 p-3 rounded-full
                      hover:bg-blue-800 '>Signup</button>
-                     <button className=' bg-orange-600 p-3 rounded-full
-                     hover:bg-orange-800 '>Reset</button>
+                     {/* <button className=' bg-orange-600 p-3 rounded-full
+                     hover:bg-orange-800 '>Reset</button> */}
                 </div>
                     
               {JSON.stringify(user)}
