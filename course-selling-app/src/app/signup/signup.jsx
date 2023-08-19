@@ -8,14 +8,18 @@ const SignUp = () => {
     email:"",
     password:"",
     profileUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUXTLButxvbD04FiW1CxI4SF72fIJgz6KD9MeYd4WB0wClHvo2yC6P56zKqT44CgA9jEI&usqp=CAU"
-  })
+  });
+
+  const doSignup=()=>{
+
+  }
 
   return (
     <div className='grid grid-cols-12 justify-center'>
         <div className='  col-span-4 col-start-5'>
           <div className=' p-5'>
             <h1 className=' text-3xl text-center'>Sign Up here</h1>
-            <form action="" className='mt-5'>
+            <form action="" className='mt-5' onSubmit={doSignup} >
               {/* name */}
               <div className=' mt-5'>
                 <label htmlFor="user_name"
@@ -87,13 +91,15 @@ const SignUp = () => {
               
              {/* button */}
              <div className='flex justify-center gap-x-4 mt-4'>
-                    <button className=' bg-blue-700 p-3 rounded-full
+                    <button 
+                    type='submit'
+                    className=' bg-blue-700 p-3 rounded-full
                      hover:bg-blue-800 '>Signup</button>
                      <button className=' bg-orange-600 p-3 rounded-full
                      hover:bg-orange-800 '>Reset</button>
                 </div>
                     
-              
+              {JSON.stringify(user)}
             </form>
           </div>
         </div>
