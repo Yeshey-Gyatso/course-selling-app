@@ -41,7 +41,10 @@ export async function POST(request:Request,response:NextResponse){
         purchasedCourses
     });
  try {
-    user.password=await bcrypt.hash(user.password,process.env.BCRYPT_SALT); 
+    user.password=await bcrypt.hash(
+        user.password,
+       parseInt(process.env.BCRYPT_SALT)
+       ); 
     console.log(user);
     const createdUser =await user.save();
 
