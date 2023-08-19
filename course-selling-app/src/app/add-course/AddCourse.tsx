@@ -46,12 +46,10 @@ const AddCourse = () => {
 
     }
   return (
-    <div className=' grid grid-cols-12 justify-center h-full
-    '>
+    <div className=' grid grid-cols-12 justify-center h-full'>
         <div className=' col-span-6 
         col-start-5 
         p-5
-        
         '>
         <div className='w-full 
         max-w-sm p-4 bg-black border 
@@ -59,8 +57,7 @@ const AddCourse = () => {
         sm:p-6 md:p-8 
         dark:bg-gray-800 
         dark:border-gray-700
-        
-        
+        h-1/2 sm:h-2/3 md:h-1/2 lg:h-1/3 xl:h-1/4
         '>
                 {/* <div className='my-8 flex justify-center items-center'>
                 <Image alt='image' 
@@ -71,7 +68,7 @@ const AddCourse = () => {
              </div> */}
 
             <h1 className='text-3xl text-center '> Add your course</h1>
-            <form action="#!" onSubmit={handleaddCourse} className='h-1/2 sm:h-2/3 md:h-1/2 lg:h-1/3 xl:h-1/4'>
+            <form action="#!" onSubmit={handleaddCourse}>
                 {/* title */}
                 <div className=' mt-4'>
                     <label htmlFor="title" 

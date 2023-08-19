@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
       type: String,
       required:[true,"Password Required !!"],
     },
+    profileUrl:String,
     purchasedCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }]
   });
   
