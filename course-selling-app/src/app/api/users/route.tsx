@@ -1,7 +1,7 @@
 
 import { connectDb } from "@/helper/db";
 import { User } from "@/models";
-
+import bcrypt
 import { NextResponse } from "next/server";
 
 connectDb();
