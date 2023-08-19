@@ -46,21 +46,32 @@ const AddCourse = () => {
 
     }
   return (
-    <div className=' grid grid-cols-12 justify-center h-full'>
+    <div className=' grid grid-cols-12 justify-center h-full
+    '>
         <div className=' col-span-6 
-        col-start-4 
-        shadow-orange-200 shadow 
+        col-start-5 
         p-5
+        
         '>
-            <div className='my-8 flex justify-center items-center'>
+        <div className='w-full 
+        max-w-sm p-4 bg-black border 
+        border-gray-200 rounded-lg shadow 
+        sm:p-6 md:p-8 
+        dark:bg-gray-800 
+        dark:border-gray-700
+        
+        
+        '>
+                {/* <div className='my-8 flex justify-center items-center'>
                 <Image alt='image' 
                 style={{
                  width:"50%",
                 }}
                 src={loginSvg}/>
-            </div>
+             </div> */}
+
             <h1 className='text-3xl text-center '> Add your course</h1>
-            <form action="#!" onSubmit={handleaddCourse}>
+            <form action="#!" onSubmit={handleaddCourse} className='h-1/2 sm:h-2/3 md:h-1/2 lg:h-1/3 xl:h-1/4'>
                 {/* title */}
                 <div className=' mt-4'>
                     <label htmlFor="title" 
@@ -171,6 +182,10 @@ const AddCourse = () => {
                     JSON.stringify(course)
                 }
             </form>
+
+            </div>
+            
+            
 
         </div>
     </div>
