@@ -1,5 +1,6 @@
 "use client"
 
+
 import Link from 'next/link';
 import React from 'react'
 
@@ -21,7 +22,8 @@ const CustomNavbar = () => {
                 login
                 </li>
                 <li>
-                Signup
+                  <Link href={'/signup'}>Signup</Link>
+                
                 </li>
             </ul></div>
         </div>
