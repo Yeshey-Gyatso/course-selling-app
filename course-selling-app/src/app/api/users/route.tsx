@@ -7,9 +7,10 @@ import { NextResponse } from "next/server";
 connectDb();
 
 export async function GET(request:Request,response:NextResponse){
-    let users=[]
+    
     try {
-        users = await User.find();
+    const users = await User.find();
+    return NextResponse.json(users);
        
         }
 
@@ -23,18 +24,19 @@ export async function GET(request:Request,response:NextResponse){
         
         
     }
-    return NextResponse.json(users);   
+    
 }
 
 
 export async function POST(request:Request,response:NextResponse){
 
-    const {username,email,password,purchasedCourses} =await  request.json();
+    const {username,email,password,profileUrl,purchasedCourses} =await  request.json();
 
     const user=new User({
         username,
         password,
         email,
+        profileUrl,
         purchasedCourses
     });
  try {
@@ -47,6 +49,9 @@ export async function POST(request:Request,response:NextResponse){
    return NextResponse.json({
             message:"failed to create user",
             status:false,
+        },
+        {
+            status:500,
         })
     
  }

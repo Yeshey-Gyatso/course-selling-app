@@ -16,17 +16,17 @@ const SignUp = () => {
     event.prevent.default();
   // input validation
   try {
-    const result = await signUpapi(user)
+    const result = await signUpapi(user);
     console.log(result)
     toast.success("user is registered successfully",{
         position:"top-center",
               
     })
   } catch (error) {
-    console.log(error)
-    toast.error("error singning up",{
+    console.log(error);
+    console.log(error.response.data.message);
+    toast.error("error singning up"+error.response.data.message,{
         position:"top-center",
-              
     })
     
   }

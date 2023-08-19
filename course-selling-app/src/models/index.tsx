@@ -47,9 +47,7 @@ const courseSchema = new mongoose.Schema({
       enum:["notpurchased","purchased"],
       default:"notpurchased"
     },
-    // userId:{
-    //   type: mongoose.Types.ObjectId,
-    // }
+  
   });
 
 export const User = mongoose.models.User || mongoose.model('User', userSchema);
