@@ -1,7 +1,15 @@
 "use client";
-import React from 'react'
+import React, { useState } from 'react'
 
 const SignUp = () => {
+
+  const [user,setUser]=useState({
+    username:"",
+    email:"",
+    password:"",
+    profileUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUXTLButxvbD04FiW1CxI4SF72fIJgz6KD9MeYd4WB0wClHvo2yC6P56zKqT44CgA9jEI&usqp=CAU"
+  })
+
   return (
     <div className='grid grid-cols-12 justify-center'>
         <div className='  col-span-4 col-start-5'>
@@ -19,6 +27,14 @@ const SignUp = () => {
                  focus:ring-gray-400 border-gray-800' 
                  placeholder='Enter your name here'
                  id='user_name'
+                 onChange={(e)=>{
+                  setUser({
+                    ...user,
+                    username:e.target.value,
+                  });
+                 }}
+                 value={user.username}
+
                  />
 
               </div>
@@ -33,7 +49,15 @@ const SignUp = () => {
                  className='w-full p-3 rounded-2xl bg-gray-800 
                  focus:ring-gray-400 border-gray-800' 
                  placeholder='Enter your email here'
-                 id='user_email' 
+                 id='user_email'
+                 onChange={(e)=>{
+                  setUser({
+                    ...user,
+                    email:e.target.value,
+                  });
+                 }}
+                 value={user.email}
+                 
                  />
   
               </div>
@@ -48,6 +72,13 @@ const SignUp = () => {
                  focus:ring-gray-400 border-gray-800' 
                  placeholder='Enter your password here'
                  id='user_password'
+                 onChange={(e)=>{
+                  setUser({
+                    ...user,
+                    password:e.target.value,
+                  });
+                 }}
+                 value={user.password}
                  /> 
                    
               </div>
@@ -61,7 +92,7 @@ const SignUp = () => {
                      <button className=' bg-orange-600 p-3 rounded-full
                      hover:bg-orange-800 '>Reset</button>
                 </div>
-                   
+                    
               
             </form>
           </div>

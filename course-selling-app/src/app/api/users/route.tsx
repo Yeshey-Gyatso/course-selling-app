@@ -27,27 +27,27 @@ export async function GET(request:Request,response:NextResponse){
 }
 
 
-// export async function POST(request:Request,response:NextResponse){
+export async function POST(request:Request,response:NextResponse){
 
-//     const {username,email,password,purchasedCourses} =await  request.json();
+    const {username,email,password,purchasedCourses} =await  request.json();
 
-//     const user=new User({
-//         username,
-//         password,
-//         email,
-//         purchasedCourses
-//     });
-//  try {
-//     const createdUser =await user.save();
+    const user=new User({
+        username,
+        password,
+        email,
+        purchasedCourses
+    });
+ try {
+    const createdUser =await user.save();
 
-//     const response = NextResponse.json(user,{status:201})
-//     return response;
-//  } catch (error) {
-//     console.log(error);
-//    return NextResponse.json({
-//             message:"failed to create user",
-//             status:false,
-//         })
+    const response = NextResponse.json(user,{status:201})
+    return response;
+ } catch (error) {
+    console.log(error);
+   return NextResponse.json({
+            message:"failed to create user",
+            status:false,
+        })
     
-//  }
-// }
+ }
+}
