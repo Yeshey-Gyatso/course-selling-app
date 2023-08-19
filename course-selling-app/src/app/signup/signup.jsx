@@ -1,5 +1,7 @@
 "use client";
+import { signUpapi } from '@/services/userService';
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
 
@@ -10,8 +12,24 @@ const SignUp = () => {
     profileUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUXTLButxvbD04FiW1CxI4SF72fIJgz6KD9MeYd4WB0wClHvo2yC6P56zKqT44CgA9jEI&usqp=CAU"
   });
 
-  const doSignup=()=>{
-
+  const doSignup=async(event)=>{
+    event.prevent.default();
+  // input validation
+  try {
+    const result = await signUpapi(user)
+    console.log(result)
+    toast.success("user is registered successfully",{
+        position:"top-center",
+              
+    })
+  } catch (error) {
+    console.log(error)
+    toast.error("error singning up",{
+        position:"top-center",
+              
+    })
+    
+  }
   }
 
   return (
