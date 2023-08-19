@@ -1,9 +1,12 @@
+import Login from './login'
 import React from 'react'
-
-const Login = () => {
+export const metadata={
+    title:"Login:JamStore"
+}; 
+const Loginpage = () => {
   return (
-    <div></div>
+    <Login/>
   )
 }
 
-export default Login
+export default Loginpage
