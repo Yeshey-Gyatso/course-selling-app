@@ -15,8 +15,8 @@ const Login = () => {
     event.preventDefault();
 //   input validation
   try {
-    const result = await loginApi(user);
-    console.log(result)
+    // const result = await loginApi(user);
+    // console.log(result)
     toast.success("Logged in successfully",{
         position:"top-center",        
                               });
