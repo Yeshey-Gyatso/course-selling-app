@@ -1,8 +1,7 @@
 "use client";
 
 import React from 'react';
-import loginSvg from "../assets/login.svg";
-import Image from 'next/image';
+
 import { useState,useEffect } from 'react';
 import {  toast } from 'react-toastify';
 import { addCourse } from '@/services/courseService';
