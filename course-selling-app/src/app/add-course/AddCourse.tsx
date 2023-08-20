@@ -45,16 +45,17 @@ const AddCourse = () => {
 
     }
   return (
-    <div className=' flex justify-center items-center h-full'>
+    <div className=' flex justify-center items-center w-full h-full'>
         <div className=''>
-        <div className='left-0 absolute h-auto w-auto
+        <div className='left-24 absolute mt-3 h-auto md:w-1/4
          p-4 bg-black border 
         border-gray-200 rounded-lg shadow 
+       
         '>
         {/* h-1/2 sm:h-2/3 md:h-1/2 lg:h-1/3 xl:h-1/4 */}
 
-            <h1 className='text-3xl text-center '> Add your course</h1>
-            <form action="#!" onSubmit={handleaddCourse}>
+            <h1 className='text-3xl text-center w-auto h-auto '> Add your course</h1>
+            <form action="#!" onSubmit={handleaddCourse} className=''>
                 {/* title */}
                 <div className=' mt-4'>
                     <label htmlFor="title" 
@@ -62,7 +63,7 @@ const AddCourse = () => {
                     >Title</label>
                     <input  type="text"
                      className=' 
-                     font-medium  w-full p-3 rounded-3xl
+                     font-medium w-full p-3 rounded-3xl
                      bg-slate-500 focus:ring-gray-100
                      border border-gray-800  
                      '
@@ -158,8 +159,8 @@ const AddCourse = () => {
                 <div className='flex justify-center gap-x-4 mt-4'>
                     <button className=' bg-blue-700 p-3 rounded-full
                      hover:bg-blue-800 '>Add Course</button>
-                     <button className=' bg-red-700 p-3 rounded-full
-                     hover:bg-red-800 '>Clear</button>
+                     {/* <button className=' bg-red-700 p-3 rounded-full
+                     hover:bg-red-800 '>Clear</button> */}
                 </div>
                 {
                     JSON.stringify(course)
