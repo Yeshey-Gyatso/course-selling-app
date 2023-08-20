@@ -1,3 +1,4 @@
+import Landing2 from "@/components/Landing2"
 
 
 export const metadata={
@@ -9,7 +10,7 @@ export default function Home() {
     <div
     className=' flex gap-1 container p-4'
     >
-      <h1 className=' text-xl'>Course selling app</h1>
+      <Landing2/>
     </div>
   )
 }

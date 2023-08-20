@@ -21,7 +21,7 @@ export default function RootLayout({
   
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black text-white`}>
+      <body className={`${inter.className} bg-black text-white div `}>
       <ToastContainer/>
         <CustomNavbar/>
         <div>{children}</div>
