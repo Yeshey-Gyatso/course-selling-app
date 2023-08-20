@@ -45,26 +45,13 @@ const AddCourse = () => {
 
     }
   return (
-    <div className=' grid grid-cols-12 justify-center h-full'>
-        <div className=' col-span-6 
-        col-start-5 
-        p-5
-        '>
-        <div className='w-full 
-        max-w-sm p-4 bg-black border 
+    <div className=' flex justify-center items-center h-full'>
+        <div className=''>
+        <div className='left-0 absolute h-auto w-auto
+         p-4 bg-black border 
         border-gray-200 rounded-lg shadow 
-        sm:p-6 md:p-8 
-        dark:bg-gray-800 
-        dark:border-gray-700
-        h-1/2 sm:h-2/3 md:h-1/2 lg:h-1/3 xl:h-1/4
         '>
-                {/* <div className='my-8 flex justify-center items-center'>
-                <Image alt='image' 
-                style={{
-                 width:"50%",
-                }}
-                src={loginSvg}/>
-             </div> */}
+        {/* h-1/2 sm:h-2/3 md:h-1/2 lg:h-1/3 xl:h-1/4 */}
 
             <h1 className='text-3xl text-center '> Add your course</h1>
             <form action="#!" onSubmit={handleaddCourse}>
@@ -111,7 +98,7 @@ const AddCourse = () => {
                         })
                     }}
                     value={course.description}
-                     rows={3}
+                     rows={2}
                      />
                 </div>
 
