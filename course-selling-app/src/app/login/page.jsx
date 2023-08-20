@@ -1,7 +1,7 @@
 import Login from './login'
 import React from 'react'
 export const metadata={
-    title:"Login:JamStore"
+    title:"Login:VintageMelodies"
 }; 
 const Loginpage = () => {
   return (

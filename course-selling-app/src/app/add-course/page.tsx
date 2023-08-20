@@ -2,7 +2,7 @@ import React from 'react'
 import AddCourse from './AddCourse';
 
 export const metadata={
-    title:"Add Course:JamStore"
+    title:"Add Course:VintageMelodies"
 }; 
 
 const AddCoursePage = () => {

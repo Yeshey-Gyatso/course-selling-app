@@ -2,7 +2,7 @@
 import SignUpUser from './signupUser'
 import React from 'react';
 export const metadata={
-    title:"Signup:JamStore"
+    title:"Signup:VintageMelodies"
 }; 
 
 const SignUpPage = () => {

@@ -1,7 +1,7 @@
 
 
 export const metadata={
-  title:"Home: JamStore"
+  title:"Home: VintageMelodies"
 }
 
 export default function Home() {
