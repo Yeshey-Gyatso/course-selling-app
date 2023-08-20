@@ -1,7 +1,7 @@
 import { Admin } from "@/models";
 import { connectDb } from "@/helper/db";
 import { NextResponse } from "next/server";
-
+import bcrypt from "bcryptjs";
 connectDb();
 
 export async function GET(request:Request,response:NextResponse){
@@ -34,6 +34,12 @@ export async function POST(request:Request,response:NextResponse){
         password
     });
  try {
+    admin.password=await bcrypt.hash(
+        admin.password,
+       parseInt(process.env.BCRYPT_SALT)
+       ); 
+       console.log(admin)
+
     const createdAdmin =await admin.save();
 
     const response =NextResponse.json(admin,{status:201})
