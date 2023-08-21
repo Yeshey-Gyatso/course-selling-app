@@ -2,6 +2,9 @@
  import { User } from "@/models";
  import bcrypt from 'bcryptjs';
  import jwt from  "jsonwebtoken";
+import { connectDb } from "@/helper/db";
+ connectDb();
+
  export async function POST(request:Request){
     const{email,password}=await request.json();
 
@@ -41,7 +44,7 @@
             "authToken",
             token,
             {
-                expiresIn:"1d",
+                expires:"1d",
                 httpOnly:true
                 }  
             
