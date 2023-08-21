@@ -1,7 +1,7 @@
  import { NextResponse } from "next/server";
  import { User } from "@/models";
-import bcrypt from 'bcryptjs';
-
+ import bcrypt from 'bcryptjs';
+ import jwt from 'jsonwebtoken';
  export async function POST(request:Request){
     const{email,password}=await request.json();
 
@@ -23,6 +23,14 @@ import bcrypt from 'bcryptjs';
         if(!matched){
             throw new Error(" Password not matched ");  
         }
+        //3 jwt token generate
+
+        const token=jwt.sign({
+            _id:user._id,
+            name:user.name
+        },process.env.JWT_KEY )
+        console.log(token);
+
     } catch (error:any) {
 
         console.log(error);
