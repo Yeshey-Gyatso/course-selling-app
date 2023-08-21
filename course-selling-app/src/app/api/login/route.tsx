@@ -1,7 +1,7 @@
  import { NextResponse } from "next/server";
  import { User } from "@/models";
  import bcrypt from 'bcryptjs';
- import jwt from 'jsonwebtoken';
+ import jwt from  "jsonwebtoken";
  export async function POST(request:Request){
     const{email,password}=await request.json();
 
@@ -29,7 +29,7 @@
             _id:user._id,
             name:user.name
         },process.env.JWT_KEY )
-        console.log(token);
+        console.log(token); 
 
     } catch (error:any) {
 
