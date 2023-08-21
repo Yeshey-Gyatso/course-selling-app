@@ -15,6 +15,11 @@ export function middleware(request: NextRequest) {
         if(authToken){
             return NextResponse.redirect(new URL('/profile/user', request.url))
         }
+    }else{
+        //accessing secured route
+        if(!authToken){
+            return NextResponse.redirect(new URL('/login', request.url))
+        }
     }
 //   return NextResponse.redirect(new URL('/home', request.url))
 }
