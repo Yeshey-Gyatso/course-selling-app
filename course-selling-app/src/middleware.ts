@@ -1,18 +1,16 @@
-import { NextResponse } from 'next/server'
-import { NextRequest } from 'next/server'
+import { NextResponse,NextRequest  } from 'next/server'
+
  
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
     console.log("middleware executed");
     const authToken=request.cookies.get("authToken")?.value;
-    
-    if(request.nextUrl.pathname="/api/login"){
+    console.log("Auth token:", authToken);
+    if(request.nextUrl.pathname==="/api/login"){
         return;
     }
 
-    const loggedinUserUnaccesspath=
-    request.nextUrl.pathname===
-    "/login" ||
+    const loggedinUserUnaccesspath=request.nextUrl.pathname==="/login" ||
     request.nextUrl.pathname=== "/signupAdmin" ||
     request.nextUrl.pathname=== "/signupUser";
     if(loggedinUserUnaccesspath){
@@ -21,7 +19,7 @@ export function middleware(request: NextRequest) {
         }
     }else{
         //accessing secured route
-        if(!authToken){
+        if(authToken==null){
             return NextResponse.redirect(new URL('/login', request.url))
         }
     }

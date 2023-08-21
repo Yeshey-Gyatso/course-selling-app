@@ -47,7 +47,7 @@ const Login = () => {
         <div className='  col-span-4 col-start-5'>
           <div className=' p-5'>
 
-            <h1 className=' text-3xl text-center'>Sign Up here</h1>
+            <h1 className=' text-3xl text-center'>Login here</h1>
             <form action="#!" onSubmit={doLogin} className='mt-5'  >
               {/* email */}
               <div className=' mt-5'>
