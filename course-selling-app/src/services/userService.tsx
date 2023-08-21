@@ -8,7 +8,7 @@ export async function signUpapi(user:any){
     return result
 }
 
-export async function userlogin(LoginData){
+export async function userlogin(LoginData:any){
     const result = await httpAxios.
     post("/api.login",LoginData)
     .then(response=>response.data)

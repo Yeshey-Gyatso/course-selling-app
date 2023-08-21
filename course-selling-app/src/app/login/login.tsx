@@ -12,7 +12,7 @@ const Login = () => {
     password:"",  
   });
 
-  const doLogin=async(event)=>{
+  const doLogin=async(event:any)=>{
     event.preventDefault();
 //   input validation
   try {
