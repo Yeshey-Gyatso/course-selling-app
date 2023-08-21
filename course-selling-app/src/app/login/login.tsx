@@ -1,34 +1,32 @@
 "use client";
 
 
+import { userlogin } from '@/services/userService';
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 
 const Login = () => {
 
   const [user,setUser]=useState({
-    username:"",
+    email:"",
     password:"",  
   });
 
-  const doLogin=async(event: { preventDefault: () => void; })=>{
+  const doLogin=async(event)=>{
     event.preventDefault();
 //   input validation
   try {
-    // const result = await loginApi(user);
-    // console.log(result)
+    const result = await userlogin(user);
+    console.log(result)
     toast.success("Logged in successfully",{
         position:"top-center",        
                               });
-        setUser(
-         {
-          username:"",
-          password:"",
-          }
-        )
+
+                              
+       
          } catch (error) {
             console.log(error);
-              toast.error("error logging up",{
+              toast.error("error in Login",{
                position:"top-center",
     });
     }
@@ -41,13 +39,13 @@ const Login = () => {
 
             <h1 className=' text-3xl text-center'>Sign Up here</h1>
             <form action="#!" onSubmit={doLogin} className='mt-5'  >
-              {/* name */}
+              {/* email */}
               <div className=' mt-5'>
-                <label htmlFor="user_name"
+                <label htmlFor="user_email"
                 className='block text-sm font-medium mb-2 ps-1'
-                >Username</label>
+                >Email</label>
                 <input 
-                 type="text"
+                 type="email"
                  className='w-full p-3 rounded-2xl bg-gray-800 
                  focus:ring-gray-400 border-gray-800' 
                  placeholder='Enter your name here'
@@ -55,10 +53,10 @@ const Login = () => {
                  onChange={(e)=>{
                   setUser({
                     ...user,
-                    username:e.target.value,
+                    email:e.target.value,
                   });
                  }}
-                 value={user.username}
+                 value={user.email}
 
                  />
 
