@@ -9,11 +9,11 @@ import { toast } from 'react-toastify';
 
 const CustomNavbar = () => {
   const context=useContext(UserContext);
-  
+  console.log(context);
   async function doLogout(){
       try { 
           const result=await logout();
-          context.setUser(undefined); 
+          // context.setUser(undefined); 
       } catch (error) {
         console.log(error)
         toast.error("Logout error")
@@ -67,7 +67,7 @@ const CustomNavbar = () => {
                     <ul className='flex   space-x-2 '>
                 <li>
                <Link href={'#!'} 
-               >{context.user.name}</Link>
+               >{context.user}</Link>
                 </li>
                 <li>
                   <Link href={'/signupUser'}
