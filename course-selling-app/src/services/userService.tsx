@@ -10,7 +10,7 @@ export async function signUpapi(user:any){
 
 export async function userlogin(LoginData:any){
     const result = await httpAxios.
-    post("/api.login",LoginData)
+    post("/api/login",LoginData)
     .then(response=>response.data)
     return result
 }

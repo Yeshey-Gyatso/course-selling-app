@@ -14,7 +14,14 @@ const Login = () => {
 
   const doLogin=async(event:any)=>{
     event.preventDefault();
+    console.log(user);
 //   input validation
+    if(user.email.trim()==="" || user.password.trim()===""){
+      toast.info("data cannot be empty!",{
+        position:"top-center"
+      });
+      return;
+    }
   try {
     const result = await userlogin(user);
     console.log(result)
