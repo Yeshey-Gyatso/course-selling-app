@@ -32,7 +32,7 @@ const Login = () => {
       });
 
         //redirect
-        router.push("/Profile/user")
+        router.push("/profile/user")
        
          } catch (error:any) {
             console.log(error);
