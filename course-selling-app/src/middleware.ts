@@ -6,6 +6,10 @@ export function middleware(request: NextRequest) {
     console.log("middleware executed");
     const authToken=request.cookies.get("authToken")?.value;
     
+    if(request.nextUrl.pathname="/api/login"){
+        return;
+    }
+
     const loggedinUserUnaccesspath=
     request.nextUrl.pathname===
     "/login" ||
