@@ -42,8 +42,8 @@
             token,
             {
                 expiresIn:"1d",
-                // httpOnly:false
-                }
+                httpOnly:true
+                }  
             
             );
         return response;
