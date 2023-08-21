@@ -29,7 +29,7 @@
             _id:user._id,
             name:user.name
         },process.env.JWT_KEY )
-        console.log(token);
+        // console.log(token);
         
         //4 sending token in cookie via nextResponse 
         const response=NextResponse.json({
