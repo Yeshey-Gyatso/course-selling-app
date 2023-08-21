@@ -17,7 +17,7 @@ export async function userlogin(LoginData:any){
 
 export async function currentUser(){
     const result = await httpAxios.
-    post("/api/current")
+    get("/api/current")
     .then(response=>response.data)
     return result
 }

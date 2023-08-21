@@ -12,16 +12,20 @@ const UserProvider = ({children}: {
     const [user,setUser]=useState(undefined);
 
     useEffect(()=>{
-        try {
-           async function DoFunc(){
-                const currentUser=await currentUser()
-            }
-            setUser({ ...user});
-        } catch (error) {
-            console.log(error);
-            toast.error("error in loading current user")
-            setUser(undefined);
+       
+        async function DoFunc(){
+            try {
+                
+                const logUser=await currentUser()
+                   
+                setUser({ ...logUser});
+               } catch (error) {
+                   console.log(error);
+                   toast.error("error in loading current user")
+                   setUser(undefined);
+               }
         }
+       
         DoFunc();
     },[])
 
