@@ -2,10 +2,12 @@
 
 
 import { userlogin } from '@/services/userService';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 
 const Login = () => {
+  const router=useRouter();
 
   const [user,setUser]=useState({
     email:"",
@@ -26,14 +28,15 @@ const Login = () => {
     const result = await userlogin(user);
     console.log(result)
     toast.success("Logged in successfully",{
-        position:"top-center",        
-                              });
+        position:"top-center",
+      });
 
         //redirect
+        router.push("/Profile/user")
        
-         } catch (error) {
+         } catch (error:any) {
             console.log(error);
-              toast.error("error in Login",{
+              toast.error(error.response.data.message,{
                position:"top-center",
     });
     }
