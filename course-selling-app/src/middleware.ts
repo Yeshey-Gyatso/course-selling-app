@@ -9,18 +9,21 @@ export function middleware(request: NextRequest) {
     if(request.nextUrl.pathname==="/api/login"){
         return;
     }
-
+    
     const loggedinUserUnaccesspath=request.nextUrl.pathname==="/login" ||
     request.nextUrl.pathname=== "/signupAdmin" ||
     request.nextUrl.pathname=== "/signupUser";
     if(loggedinUserUnaccesspath){
+        //accessing not secured routes
         if(authToken){
             return NextResponse.redirect(new URL('/profile/user', request.url))
         }
     }else{
         //accessing secured route
-        if(authToken==null){
+        if(!authToken){
             return NextResponse.redirect(new URL('/login', request.url))
+        }else{
+            
         }
     }
 //   return NextResponse.redirect(new URL('/home', request.url))
