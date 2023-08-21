@@ -1,8 +1,9 @@
  import { NextResponse } from "next/server";
  import { User } from "@/models";
+import bcrypt from 'bcryptjs';
 
  export async function POST(request:Request){
-    const{email,passowrd}=await request.json();
+    const{email,password}=await request.json();
 
 
 
@@ -18,7 +19,10 @@
         }
 
         //2decrypt 
-        
+        const matched=bcrypt.compareSync(password, user.password)
+        if(!matched){
+            throw new Error(" Password not matched ");  
+        }
     } catch (error:any) {
 
         console.log(error);
