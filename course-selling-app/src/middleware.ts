@@ -5,9 +5,12 @@ import { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
     console.log("middleware executed");
     const authToken=request.cookies.get("authToken")?.value;
-    console.log(authToken)
-    const loggedinUserUnaccesspath= request.nextUrl.pathname===
-    "/login" || "/signupAdmin" || "/signupUser";
+    
+    const loggedinUserUnaccesspath=
+    request.nextUrl.pathname===
+    "/login" ||
+    request.nextUrl.pathname=== "/signupAdmin" ||
+    request.nextUrl.pathname=== "/signupUser";
     if(loggedinUserUnaccesspath){
         if(authToken){
             return NextResponse.redirect(new URL('/profile/user', request.url))
