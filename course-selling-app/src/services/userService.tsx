@@ -14,3 +14,10 @@ export async function userlogin(LoginData:any){
     .then(response=>response.data)
     return result
 }
+
+export async function currentUser(){
+    const result = await httpAxios.
+    post("/api/current")
+    .then(response=>response.data)
+    return result
+}
