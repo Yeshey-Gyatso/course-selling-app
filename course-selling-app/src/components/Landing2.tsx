@@ -16,8 +16,6 @@ const Landing2 = () => {
      bg-cover
      bg-fixed
      bg-blend-overlay
-  
-     
      '
      style={{
         backgroundImage:`url(${bgT})`,
@@ -50,7 +48,7 @@ const Landing2 = () => {
                 
                 
                 className='cursor-default text-2xl sm:text-4xl font-bold md:6xl text-white'>
-                    WELCOME TO MY SITE 
+                    WELCOME TO VINTAGE MELODIES
                     
                 </m.h2>
                   
@@ -64,7 +62,7 @@ const Landing2 = () => {
                      <div className=' my-10  py-10  bg-gray-800 opacity-70 w-full px-8 flex flex-col items-center '>
                         <p className=' cursor-default py-4 text-white md:text-2xl max-w-full sm:mx-auto z-10 font-light   
                         '>
-                            <span className=' font-quote'>"Creativity is contagious. Pass it on." </span><span className='  font-mono font-bold'>- Albert Einstein</span>
+                            <span className=' font-quote'>"Music is the closest thing we have to magic."  </span><span className='  font-mono font-bold'>– Jim Carrey</span>
                         </p>
                      </div>
                      

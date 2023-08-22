@@ -6,6 +6,11 @@ connectDb();
 export async function GET(request:NextResponse){
     const authToken=request.cookies.get("authToken")?.value;
     // console.log(authToken);
+    // if(!authToken){
+    //     return NextResponse.json({
+    //         message:"user ins't logged in"
+    //     })
+    // }
     const payload=jwt.verify(authToken, process.env.JWT_KEY);
     // console.log(payload);
 
