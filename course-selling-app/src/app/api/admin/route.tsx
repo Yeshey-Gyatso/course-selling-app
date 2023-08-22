@@ -42,7 +42,7 @@ export async function POST(request:Request,response:NextResponse){
 
     const createdAdmin =await admin.save();
 
-    const response =NextResponse.json(admin,{status:201})
+    const response = NextResponse.json(admin,{status:201})
     return response;
  } catch (error) {
     console.log(error);
