@@ -16,10 +16,11 @@ const Landing2 = () => {
      bg-cover
      bg-fixed
      bg-blend-overlay
+  
      
      '
      style={{
-        backgroundImage:`url(${bgT})`
+        backgroundImage:`url(${bgT})`,
      }}
      >
 

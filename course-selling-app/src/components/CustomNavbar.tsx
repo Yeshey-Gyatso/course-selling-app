@@ -31,6 +31,8 @@ const CustomNavbar = () => {
   return (
     <div className=' flex md:justify-between 
      bg-gray-500
+     w-full 
+     fixed
       p-4
        z-10'>
         <div className=' brand'>
