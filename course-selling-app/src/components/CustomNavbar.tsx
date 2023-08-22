@@ -7,6 +7,9 @@ import Link from 'next/link';
 import React, { useContext } from 'react'
 import { toast } from 'react-toastify';
 
+
+
+
 const CustomNavbar = () => {
   const context=useContext(UserContext);
   console.log(context);

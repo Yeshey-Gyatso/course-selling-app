@@ -44,7 +44,7 @@ import { connectDb } from "@/helper/db";
             "authToken",
             token,
             {
-                expires: Date.now() - oneDay,
+                expiresIn:"1d",
                 httpOnly:true
                 }  
             
