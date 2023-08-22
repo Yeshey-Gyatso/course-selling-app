@@ -4,8 +4,13 @@ import React from 'react'
 const Courses = () => {
   return (
     <div className="p-10">
-      <div className='max-w-sm rounded overflow-hidden shadow-lg'>
-      <image className="w-full" src={'#!'} alt="Mountain"/>
+      <div className='max-w-sm rounded overflow-hidden shadow-lg bg-white'>
+      <img
+        className="w-full"
+        src="https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=1xw:0.84415xh;center,top"
+        alt="Mountain"
+        style={{ width: '100%' }} 
+      />
 
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">Mountain</div>
