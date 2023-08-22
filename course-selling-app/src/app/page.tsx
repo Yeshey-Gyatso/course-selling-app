@@ -10,7 +10,7 @@ export const metadata={
 export default function Home() {
   return (
     <div
-    className=' '
+    className=' w-full h-full'
     >
       <Landing2/>
       <Page2/>

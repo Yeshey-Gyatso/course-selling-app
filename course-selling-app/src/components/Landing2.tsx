@@ -10,6 +10,7 @@ const Landing2 = () => {
     <section  
      //  bg-black/50
     className='snap-y snap-mandatory h-screen w-full
+   
      flex items-center
      bg1
      bg-cover
@@ -18,13 +19,14 @@ const Landing2 = () => {
      '
      >
         <div className=' 
-        h-auto mx-auto 
+        max-w-screen-lg mx-auto 
         flex 
         items-center 
         justify-center 
         max-w-responsive
         px-4 md:flex-row
         '>
+            
               <div 
                 className='relative z-10 flex flex-col items-center'>
                 <div className='relative flex flex-row items-center'>
