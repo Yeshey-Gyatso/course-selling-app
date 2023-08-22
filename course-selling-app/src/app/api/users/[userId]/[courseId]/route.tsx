@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 import { getResponseMessage } from "@/helper/error";
 
 
-connectDb();
+
 
 export async function POST(request:Request,{params}){
-    try {
+    try {await connectDb();
         const {courseId,userId}=params;
         
         

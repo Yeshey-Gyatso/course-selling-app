@@ -2,11 +2,11 @@ import { connectDb } from "@/helper/db";
 import { getResponseMessage } from "@/helper/error";
 import { Course } from "@/models";
 import { NextResponse } from "next/server";
-connectDb();
+
 
 export async function GET(request:Request,response:NextResponse){
     
-    try {
+    try {await connectDb();
         const courses = await Course.find();
         return NextResponse.json(courses);
         }

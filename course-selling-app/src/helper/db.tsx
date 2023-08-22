@@ -12,7 +12,7 @@ export const connectDb = async()=>{
     }
 
     try {
-const {connection} =await mongoose.connect("mongodb+srv://yesheygyatso:qwer@cluster0.gtye3uq.mongodb.net/",
+const {connection} =await mongoose.connect("mongodb+srv://yesheygyatso:qwer@cluster0.gtye3uq.mongodb.net/course-selling-app",
  { dbName: "course-selling-app" });
        console.log(connection) 
        console.log(connection.readyState);

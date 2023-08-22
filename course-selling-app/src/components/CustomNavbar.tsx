@@ -30,7 +30,7 @@ const CustomNavbar = () => {
 
   return (
     <div className=' flex md:justify-between 
-     bg-gray-500
+    bg-emerald-950 
      w-full 
      fixed
       p-4

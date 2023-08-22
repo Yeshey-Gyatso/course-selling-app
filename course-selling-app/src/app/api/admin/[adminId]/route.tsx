@@ -3,10 +3,11 @@ import { connectDb } from "@/helper/db";
 
 import { NextResponse } from "next/server";
 
-connectDb();
+
 
 export async function GET(request:Request,{ params }){
     const {adminId}=params;
+    await connectDb();
     const admin=await Admin.findById(adminId);
     return NextResponse.json(admin)
 }
@@ -14,7 +15,7 @@ export async function GET(request:Request,{ params }){
 
 export async function DELETE(request:Request,{ params }){
         const {adminId}=params;
-        try {
+        try {await connectDb();
            await Admin.deleteOne({
                 _id:adminId
             });

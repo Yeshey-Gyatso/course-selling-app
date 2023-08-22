@@ -46,6 +46,7 @@ export async function POST(request:Request,response:NextResponse){
        parseInt(process.env.BCRYPT_SALT)
        ); 
     console.log(user);
+    await connectDb();
     const createdUser =await user.save();
 
     const response = NextResponse.json(user,{status:201})

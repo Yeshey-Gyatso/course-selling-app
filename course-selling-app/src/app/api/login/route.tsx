@@ -3,7 +3,7 @@
  import bcrypt from 'bcryptjs';
  import jwt from  "jsonwebtoken";
 import { connectDb } from "@/helper/db";
- connectDb();
+ 
 
  export async function POST(request:Request){
     const{email,password}=await request.json();
@@ -12,6 +12,7 @@ import { connectDb } from "@/helper/db";
 
    
     try {
+        await connectDb();
         //1 checking the user
         const user=await User.findOne({
             email:email,

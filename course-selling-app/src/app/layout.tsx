@@ -22,7 +22,7 @@ export default function RootLayout({
   
   return (
     <html lang="en">
-      <body className={`${inter.className} text-white div `}>
+      <body className={`${inter.className} bg-stone-900 text-white div `}>
       <UserProvider>
       <ToastContainer/>
         <CustomNavbar/>

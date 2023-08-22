@@ -2,11 +2,11 @@ import { Admin } from "@/models";
 import { connectDb } from "@/helper/db";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-connectDb();
+
 
 export async function GET(request:Request,response:NextResponse){
     
-    try {
+    try {await connectDb();
         const admins = await Admin.find();
         return NextResponse.json(admins);
         }
@@ -39,7 +39,8 @@ export async function POST(request:Request,response:NextResponse){
        parseInt(process.env.BCRYPT_SALT)
        ); 
        console.log(admin)
-
+       
+       await connectDb();
     const createdAdmin =await admin.save();
 
     const response = NextResponse.json(admin,{status:201})
