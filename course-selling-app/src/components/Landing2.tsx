@@ -35,7 +35,7 @@ const Landing2 = () => {
                 transition={{duration:1 , ease:"easeInOut"}}
 
                 animate={{y:-60,opacity:1}}
-                className='absolute tracking-wide leading-loose right-96 cursor-default text-2xl sm:text-4xl font-bold md:text-6xl text-white whitespace-break-spaces'>
+                className='absolute tracking-wide leading-loose right-96 cursor-default text-2xl sm:text-4xl font-bold md:text-6xl text-white '>
                     WELCOME TO VINTAGE MELODIES
                 </m.h2>     
                   {/* <m.h2
