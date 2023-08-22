@@ -8,9 +8,7 @@ import { toast } from 'react-toastify';
 const AdminLogin = () => {
 
   const context=useContext(UserContext);
-
   const router=useRouter();
-
   const [user,setUser]=useState({
     username:"",
     password:"",  
