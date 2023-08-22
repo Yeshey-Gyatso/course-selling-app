@@ -25,6 +25,16 @@ export function middleware(request: NextRequest) {
     }else{
         //accessing secured route
         if(!authToken){
+
+            if(request.nextUrl.pathname.startsWith("/api")){
+                return NextResponse.json({
+                    message:"Access Denied!",
+                    success:false
+                },{
+                    status:40
+                })
+            }    
+
             return NextResponse.redirect(new URL('/login', request.url))
         }else{
             
