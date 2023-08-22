@@ -7,10 +7,11 @@ import Link from 'next/link';
 const Landing2 = () => {
   return (
     <section  
-     //  bg-black/50
+     //
     className='snap-y snap-mandatory h-screen w-full
      flex items-center
      bg1
+     bg-black/40
      bg-cover
      bg-fixed
      bg-blend-overlay
@@ -34,7 +35,7 @@ const Landing2 = () => {
                 transition={{duration:1 , ease:"easeInOut"}}
 
                 animate={{y:-60,opacity:1}}
-                className='absolute right-96 cursor-default text-2xl sm:text-4xl font-bold md:text-6xl text-black'>
+                className='absolute tracking-wide leading-loose right-96 cursor-default text-2xl sm:text-4xl font-bold md:text-6xl text-white whitespace-break-spaces'>
                     WELCOME TO VINTAGE MELODIES
                 </m.h2>     
                   {/* <m.h2
