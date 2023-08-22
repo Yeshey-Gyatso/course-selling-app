@@ -5,35 +5,24 @@ import {GiMailbox} from 'react-icons/gi';
 import { motion as m } from "framer-motion"
 import Link from 'next/link';
 const Landing2 = () => {
-  
-                
+            
   return (
     <section  
-    className=' snap-y snap-mandatory h-screen w-full
+    className='snap-y snap-mandatory h-screen w-full
      bg-black/50
-     
      flex items-center
      bg-cover
      bg-fixed
      bg-blend-overlay
      '
-     style={{
-        backgroundImage:`url(${bgT})`,
-     }}
      >
-
-       
-            
-       
-        <div className='
-        
+        <div className=' 
         max-w-screen-lg mx-auto 
         flex 
         items-center 
         justify-center 
         max-w-responsive
         px-4 md:flex-row
-        
         '>
             
               <div 
@@ -45,13 +34,9 @@ const Landing2 = () => {
                 transition={{duration:1 , ease:"easeInOut"}}
 
                 animate={{y:-30,opacity:1}}
-                
-                
                 className='cursor-default text-2xl sm:text-4xl font-bold md:6xl text-white'>
                     WELCOME TO VINTAGE MELODIES
-                    
-                </m.h2>
-                  
+                </m.h2>     
                   <m.h2
                      animate={{x:0,y:-30,opacity:1}}
                      initial={{x:"200%",y:"-300%",opacity:-5}}
