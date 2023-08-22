@@ -32,7 +32,7 @@ const Login = () => {
     const result = await userlogin(user);
     console.log(result)
     toast.success("Logged in successfully",{
-        position:"top-center",
+        position:"bottom-center",
       });
 
         //redirect

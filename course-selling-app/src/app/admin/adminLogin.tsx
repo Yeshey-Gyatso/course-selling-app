@@ -28,7 +28,7 @@ const AdminLogin = () => {
     const result = await adminlogin(user);
     console.log(result)
     toast.success("Logged in successfully",{
-        position:"top-center",
+        position:"bottom-center",
       });
 
         //redirect
