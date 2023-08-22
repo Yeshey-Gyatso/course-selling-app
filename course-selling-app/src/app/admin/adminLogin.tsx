@@ -1,6 +1,6 @@
 "use client";
 import UserContext from '@/context/userContext';
-// import { userlogin } from '@/services/userService';
+import { adminlogin } from '@/services/adminServices';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react'
 import { toast } from 'react-toastify';
@@ -25,7 +25,7 @@ const AdminLogin = () => {
       return;
     }
   try {
-    const result = await userlogin(user);
+    const result = await adminlogin(user);
     console.log(result)
     toast.success("Logged in successfully",{
         position:"top-center",
@@ -48,7 +48,7 @@ const AdminLogin = () => {
         <div className='  col-span-4 col-start-5'>
           <div className=' p-5'>
 
-            <h1 className=' text-3xl text-center'>Login here</h1>
+            <h1 className=' text-3xl text-center'>ADMIN Login here</h1>
             <form action="#!" onSubmit={doLogin} className='mt-5'  >
               {/* username */}
               <div className=' mt-5'>

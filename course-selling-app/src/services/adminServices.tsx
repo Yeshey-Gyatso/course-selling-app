@@ -8,3 +8,10 @@ export async function signUpapiAdmin(user:any){
     .then((response)=>response.data)
     return result
 }
+
+export async function adminlogin(LoginData:any){
+    const result = await httpAxios.
+    post("/api/admin",LoginData)
+    .then(response=>response.data)
+    return result
+}
