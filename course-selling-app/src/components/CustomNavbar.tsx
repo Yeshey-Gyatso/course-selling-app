@@ -55,9 +55,9 @@ const CustomNavbar = () => {
               context.user && (
                 <>
                    <li>
-               <Link href={'#!'} 
+               <h1 className=' inline cursor-default'
                 
-               >{context.user.username}</Link>
+               >{context.user.username}</h1>
                 </li>
                 <li>
                   <button
