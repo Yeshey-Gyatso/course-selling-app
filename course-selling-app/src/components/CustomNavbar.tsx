@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 
 const CustomNavbar = () => {
   const context=useContext(UserContext);
-  console.log(context);
+  console.log("here is the context",context);
   async function doLogout(){
       try { 
           const result=await logout();
@@ -47,42 +47,49 @@ const CustomNavbar = () => {
             }
             </div>
         <div>
-              {
-                context.user && (
-                  <>
-                  <ul className='flex   space-x-2 '>
+            <ul className='flex   space-x-2 '>
+            {
+              context.user && (
+                <>
+                   <li>
+               <Link href={'#!'} 
+                
+               >{context.user.username}</Link>
+                </li>
                 <li>
+                  <Link
+                  onClick={doLogout} 
+                  href={'/logout'}>logout</Link>
+                </li>
+
+                </>
+              )
+            }
+            {
+              !context.user &&(
+                <>
+                  <li>
                <Link href={'/login'} 
-                onClick={doLogout}
                >login</Link>
                 </li>
                 <li>
-                  <Link href={'/signupUser'}>Signup</Link>
-                
-                </li>
-            </ul>
-                  </>
-                )
-              }
-              {
-                !context.user && (
-                  <>  
-                    <ul className='flex   space-x-2 '>
-                <li>
-               <Link href={'#!'} 
-               >{context.user}</Link>
-                </li>
-                <li>
                   <Link href={'/signupUser'}
-                   onClick={doLogout}
-                  >Log out</Link>
+                   
+                  >Signup</Link>
                 
                 </li>
+                </>
+              )
+            }
+               
             </ul>
-                  </>
-                )
-              }
-
+                  
+              
+                   
+                   
+                
+            
+                
         </div>
         </div>
   )
