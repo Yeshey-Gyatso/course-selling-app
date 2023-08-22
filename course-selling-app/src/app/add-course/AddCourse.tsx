@@ -47,9 +47,10 @@ const AddCourse = () => {
   return (
     <div className=' flex justify-center items-center w-full h-full'>
         <div className=''>
-        <div className='left-24 absolute mt-3 h-auto md:w-1/4
+        <div className='left-24 absolute h-auto md:w-1/4
          p-4 bg-black border 
         border-gray-200 rounded-lg shadow 
+        mt-23
        
         '>
         {/* h-1/2 sm:h-2/3 md:h-1/2 lg:h-1/3 xl:h-1/4 */}

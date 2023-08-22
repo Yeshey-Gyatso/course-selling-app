@@ -28,14 +28,15 @@ const Landing2 = () => {
             
               <div 
                 className='relative z-1 flex flex-col items-center'>
-                <div className='relative flex flex-row items-center'>
+                <div className='relative flex flex-row items-center '>
                 <m.h2 
                 initial={{opacity:0,y:"100%"}} 
                 
                 transition={{duration:1 , ease:"easeInOut"}}
 
                 animate={{y:-60,opacity:1}}
-                className='absolute tracking-wide leading-loose right-96 cursor-default text-2xl sm:text-4xl font-bold md:text-6xl text-white '>
+                
+                className='absolute leading-loose right-96 cursor-default text-2xl sm:text-4xl font-bold md:text-6xl  text-white '>
                     WELCOME TO VINTAGE MELODIES
                 </m.h2>     
                   {/* <m.h2
