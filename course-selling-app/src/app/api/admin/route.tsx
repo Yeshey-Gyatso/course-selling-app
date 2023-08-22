@@ -27,7 +27,7 @@ export async function GET(request:Request,response:NextResponse){
 
 export async function POST(request:Request,response:NextResponse){
 
-    const {username,password} =await  request.json();
+    const {username,password} =await request.json();
 
     const admin=new Admin({
         username,

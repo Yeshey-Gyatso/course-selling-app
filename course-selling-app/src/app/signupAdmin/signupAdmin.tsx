@@ -5,8 +5,6 @@ import { signUpapiAdmin } from '@/services/adminServices';
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 
-
-
 const SignUpAdmin = () => {
 
     const [user,setUser]=useState({
@@ -22,13 +20,11 @@ const SignUpAdmin = () => {
       console.log(result)
       toast.success("user is registered successfully",{
           position:"top-center",        
-                                });
+           });
           setUser(
            {
             username:"",
-          
             password:"",
-           
             }
           )
            } catch (error:any) {
@@ -45,7 +41,7 @@ const SignUpAdmin = () => {
           <div className='  col-span-4 col-start-5'>
             <div className=' p-5'>
   
-              <h1 className=' text-3xl text-center'>Sign Up here</h1>
+              <h1 className=' text-3xl text-center'>Sign Up here mr admin</h1>
               <form action="#!" onSubmit={doSignup} className='mt-5'  >
                 
                 {/* name */}

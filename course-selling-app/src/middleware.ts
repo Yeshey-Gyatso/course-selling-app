@@ -27,7 +27,7 @@ export function middleware(request: NextRequest) {
         //accessing secured route
         if(!authToken){
 
-            if(request.nextUrl.pathname.startsWith("/api")){
+            if(request.nextUrl.pathname.startsWith("/api") && !request.nextUrl.pathname.startsWith("/api/admin")){
                 return NextResponse.json({
                     message:"Access Denied!",
                     success:false
@@ -35,7 +35,10 @@ export function middleware(request: NextRequest) {
                     status:40
                 })
             }    
-
+            if(request.nextUrl.pathname.startsWith("/api/admin")){
+                // return NextResponse.redirect(new URL('/admin', request.url))
+                return;
+            }
             return NextResponse.redirect(new URL('/login', request.url))
         }else{
             
