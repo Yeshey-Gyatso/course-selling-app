@@ -8,12 +8,10 @@ import { connectDb } from "@/helper/db";
  export async function POST(request:Request){
     const{email,password}=await request.json();
 
-
-
-   
     try {
-        await connectDb();
+       
         //1 checking the user
+        await connectDb();
         const user=await User.findOne({
             email:email,
         });

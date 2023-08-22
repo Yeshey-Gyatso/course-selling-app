@@ -37,7 +37,7 @@ export async function POST(request:Request,{params}){
 
 export async function GET(request:Request,{params}){
    
-    try {
+    try {await connectDb();
         const {courseId,userId}=params;
         
         const user=await User.findById(userId);

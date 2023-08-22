@@ -11,7 +11,7 @@ const Landing2 = () => {
     <section  
     className=' snap-y snap-mandatory h-screen w-full
      bg-black/50
-     height: 20px
+     
      flex items-center
      bg-cover
      bg-fixed

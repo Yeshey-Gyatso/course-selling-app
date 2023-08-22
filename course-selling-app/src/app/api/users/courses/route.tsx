@@ -3,11 +3,11 @@ import { connectDb } from "@/helper/db";
 import { NextResponse } from "next/server";
 import { getResponseMessage } from "@/helper/error";
 
-connectDb();
+
 
 export async function GET(request:Request,response:NextResponse){
     
-    try {
+    try {await connectDb();
         const courses = await Course.find();
         return NextResponse.json(courses);
         }

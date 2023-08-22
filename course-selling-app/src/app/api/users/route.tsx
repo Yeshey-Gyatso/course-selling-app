@@ -5,11 +5,11 @@ import { User } from "@/models";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 
-connectDb();
+
 
 export async function GET(request:Request,response:NextResponse){
     
-    try {
+    try {await connectDb();
     const users = await User.find();
     return NextResponse.json(users);
        
