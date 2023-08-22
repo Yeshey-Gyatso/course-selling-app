@@ -32,8 +32,8 @@ const AdminLogin = () => {
       });
 
         //redirect
-        context.setUser(result.user);
-        router.push("/profile/user")
+        // context.setUser(result.user);
+        router.push("admin/courses")
        
          } catch (error:any) {
             console.log(error);
@@ -48,7 +48,7 @@ const AdminLogin = () => {
         <div className='  col-span-4 col-start-5'>
           <div className=' p-5'>
 
-            <h1 className=' text-3xl text-center'>ADMIN Login here</h1>
+            <h1 className=' text-3xl text-center'>ADMIN  Login here</h1>
             <form action="#!" onSubmit={doLogin} className='mt-5'  >
               {/* username */}
               <div className=' mt-5'>
