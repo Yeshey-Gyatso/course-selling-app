@@ -6,7 +6,11 @@ export function middleware(request: NextRequest) {
     console.log("middleware executed");
     const authToken=request.cookies.get("authToken")?.value;
     console.log("Auth token:", authToken);
-    if(request.nextUrl.pathname==="/api/login"){
+
+    if(request.nextUrl.pathname==="/api/login" || 
+       request.nextUrl.pathname==="/api/users" ||
+       request.nextUrl.pathname==="/api/admin"
+    ){
         return;
     }
     
