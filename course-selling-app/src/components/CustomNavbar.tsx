@@ -4,6 +4,7 @@
 import UserContext from '@/context/userContext';
 import { logout } from '@/services/userService';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useContext } from 'react'
 import { toast } from 'react-toastify';
 
@@ -12,11 +13,13 @@ import { toast } from 'react-toastify';
 
 const CustomNavbar = () => {
   const context=useContext(UserContext);
-  console.log("here is the context",context);
+  const router = useRouter()
+  // console.log("here is the context",context);
   async function doLogout(){
       try { 
           const result=await logout();
-          context.setUser(undefined); 
+          context.setUser(undefined);
+          router.push("/") 
       } catch (error) {
         console.log(error)
         toast.error("Logout error")
