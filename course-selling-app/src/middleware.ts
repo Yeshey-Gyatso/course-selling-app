@@ -9,14 +9,15 @@ export function middleware(request: NextRequest) {
 
     if(request.nextUrl.pathname==="/api/login" || 
        request.nextUrl.pathname==="/api/users" ||
-       request.nextUrl.pathname==="/api/admin"
+       request.nextUrl.pathname==="/api/admin:path*" 
+      
     ){
         return;
     }
     
     const loggedinUserUnaccesspath=request.nextUrl.pathname==="/login" ||
     request.nextUrl.pathname=== "/signupAdmin" ||
-    request.nextUrl.pathname=== "/signupUser";
+    request.nextUrl.pathname=== "/signupUser"; 
     if(loggedinUserUnaccesspath){
         //accessing not secured routes
         if(authToken){
