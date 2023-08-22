@@ -24,8 +24,7 @@ const UserProvider = ({children}: {
                    setUser(undefined);
                }
         }
-       
-        DoFunc();
+       if(!user) DoFunc();
     },[])
 
   return (
