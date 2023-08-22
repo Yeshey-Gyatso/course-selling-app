@@ -37,7 +37,8 @@ import { connectDb } from "@/helper/db";
         //4 sending token in cookie via nextResponse 
         const response=NextResponse.json({
             message:"logged in successfully",
-            success:true
+            success:true,
+            user:user
         })
 
         response.cookies.set(
