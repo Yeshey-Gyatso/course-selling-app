@@ -16,7 +16,7 @@ const CustomNavbar = () => {
   async function doLogout(){
       try { 
           const result=await logout();
-          // context.setUser(undefined); 
+          context.setUser(undefined); 
       } catch (error) {
         console.log(error)
         toast.error("Logout error")
@@ -57,9 +57,9 @@ const CustomNavbar = () => {
                >{context.user.username}</Link>
                 </li>
                 <li>
-                  <Link
+                  <button
                   onClick={doLogout} 
-                  href={'/logout'}>logout</Link>
+                  >logout</button>
                 </li>
 
                 </>

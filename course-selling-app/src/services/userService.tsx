@@ -16,15 +16,15 @@ export async function userlogin(LoginData:any){
 }
 
 export async function currentUser(){
-    const result = await httpAxios.
-    get("/api/current")
+    const result = await httpAxios
+    .get("/api/current")
     .then(response=>response.data)
     return result
 }
 
 export async function logout(){
-    const result = await httpAxios.
-    post("/api/logout")
+    const result = await httpAxios
+    .post("/api/logout")
     .then(response=>response.data)
     return result
 }
