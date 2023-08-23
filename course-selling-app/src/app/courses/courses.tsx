@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react'
-
+import { NextResponse } from 'next/server';
 const Courses = () => {
   return (
 
