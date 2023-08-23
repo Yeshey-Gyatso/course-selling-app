@@ -5,3 +5,10 @@ export async function addCourse(course:any){
    .then((response)=>response.data)
 return result
 }
+
+export async function GetCourse(){
+   const result = await httpAxios
+   .get("/api/users/courses")
+   .then(response=>response.data)
+   return result
+}
