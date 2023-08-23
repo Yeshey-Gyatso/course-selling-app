@@ -9,7 +9,7 @@ const Courses = () => {
   const router=useRouter();
   const context=useContext(UserContext)
   const userP=context.user;
-   const userId=userP._id
+  const userId = userP ? userP._id : null;
   const [course,setCourse]=useState([]);
   async function load() {
 

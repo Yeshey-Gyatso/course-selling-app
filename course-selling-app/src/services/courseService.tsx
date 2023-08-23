@@ -19,3 +19,10 @@ export async function Purachased(userId,courseId){
    .then(response=>response.data)
    return result
 }
+
+export async function PurachasedCourses(userId){
+   const result = await httpAxios
+   .get(`/api/users/${userId}/purchasedCourses`)
+   .then(response=>response.data)
+   return result
+}
