@@ -16,7 +16,7 @@ const Courses = () => {
     try {
         const Task = await GetCourse();
         setCourse([...Task])
-        console.log(Task);
+       
     } catch (error) {
       console.log(error);
     }
@@ -32,9 +32,10 @@ const Courses = () => {
 
     try {
       const result= await Purachased(userId,courseId)
-      toast.success("hmm lets see",{
+      toast.success(" assuming paayment successfull",{
         position:"top-center" 
        });
+       console.log(userId,courseId)
        router.push("/profile/user")
     } catch (error) {
       console.log(error)

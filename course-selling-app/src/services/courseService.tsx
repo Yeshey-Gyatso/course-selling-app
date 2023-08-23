@@ -17,6 +17,7 @@ export async function Purachased(userId,courseId){
    const result = await httpAxios
    .post(`/api/users/${userId}/${courseId}`)
    .then(response=>response.data)
+   console.log(result)
    return result
 }
 
@@ -24,5 +25,6 @@ export async function PurachasedCourses(userId){
    const result = await httpAxios
    .get(`/api/users/${userId}/purchasedCourses`)
    .then(response=>response.data)
+   console.log(result)
    return result
 }
