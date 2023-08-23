@@ -1,8 +1,11 @@
 "use client";
-import React from 'react'
+import React, { useState } from 'react'
 
 const Courses = () => {
   return (
+
+    const [course,setCourse]=useState("");
+
     <div className="p-10">
       <div className='max-w-sm rounded overflow-hidden shadow-lg bg-white'>
       <img
