@@ -18,8 +18,9 @@ const Profile = () => {
 
       try {
           const Task = await PurachasedCourses(userId);
-          setCourse([...Task])
-          console.log(Task);
+          setCourse(Task.purchasedCourses);
+          console.log(Task.purchasedCourses); // Set the course state directly with the Task array
+    console.log(Task);
       } catch (error) {
         console.log(error);
       }
@@ -28,13 +29,14 @@ const Profile = () => {
     useEffect(()=>{
         if(context.user){
           load(context.user._id)
+          
         }
       
       
-    },[])
+    },[context.user])
 
 
-
+     
   return (
     <div  >
       <div className=' lg:pb-36 pb-20 '>
@@ -47,7 +49,7 @@ const Profile = () => {
             bg-white
             
             '
-            key={task.title}
+            key={task._id}
             >
             
             <img
@@ -73,8 +75,8 @@ const Profile = () => {
               <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#YouTube</span>
             </div>
             <div className='px-6 pt-4 pb-2'>
-                <button  className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-                  Click Content 
+               <button  className='inline-block bg-orange-200 rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+                  Click to see the content 
                 </button>
             </div>
             

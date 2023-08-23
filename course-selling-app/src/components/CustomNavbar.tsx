@@ -45,7 +45,7 @@ const CustomNavbar = () => {
               context.user &&(
                 <>
             <h1><Link href={'/courses' }className=' hover:text-gray-300'>Courses</Link></h1>
-                
+            <h1><Link href={'/profile/user' }className=' hover:text-gray-300'> Purchases</Link></h1>   
                 </>
 
               )

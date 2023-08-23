@@ -11,12 +11,17 @@ const Courses = () => {
   const userP=context.user;
   const userId = userP ? userP._id : null;
   const [course,setCourse]=useState([]);
+  console.log(context)
+  const purchasedCoursesId = context.user ? context.user.purchasedCourses : [];
+  console.log(purchasedCoursesId);
+
+
   async function load() {
 
     try {
         const Task = await GetCourse();
         setCourse([...Task])
-       
+        console.log(Task);
     } catch (error) {
       console.log(error);
     }
@@ -29,7 +34,13 @@ const Courses = () => {
   },[])
 
   const Purchase=async(courseId)=>{
-
+    if (purchasedCoursesId.includes(courseId)) {
+      toast.error(" course already purchased",{
+        position:"top-center" 
+       });
+       router.push("/profile/user");
+       return;
+    }
     try {
       const result= await Purachased(userId,courseId)
       toast.success(" assuming paayment successfull",{
