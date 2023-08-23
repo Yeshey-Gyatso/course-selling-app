@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const metadata={
-    title:"Profile: VintageMelodies"
+    title:"User-Profile: VintageMelodies"
   }
 
 const Profile = () => {

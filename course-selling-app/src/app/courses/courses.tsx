@@ -1,9 +1,15 @@
 "use client";
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { NextResponse } from 'next/server';
-import { GetCourse } from '@/services/courseService';
+import { GetCourse, Purachased } from '@/services/courseService';
+import UserContext from '@/context/userContext';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 const Courses = () => {
- 
+  const router=useRouter();
+  const context=useContext(UserContext)
+  const userP=context.user;
+   const userId=userP._id
   const [course,setCourse]=useState([]);
   async function load() {
 
@@ -17,15 +23,21 @@ const Courses = () => {
     
   }
   useEffect(()=>{
-      load()
+      
+    load()
+    
   },[])
 
-  const Purchase=async()=>{
+  const Purchase=async(courseId)=>{
 
     try {
-      const result= await addCourse(course)
+      const result= await Purachased(userId,courseId)
+      toast.success("hmm lets see",{
+        position:"top-center" 
+       });
+       router.push("/profile/user")
     } catch (error) {
-      
+      console.log(error)
     }
     
   }
@@ -70,7 +82,7 @@ const Courses = () => {
               <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#YouTube</span>
             </div>
             <div className='px-6 pt-4 pb-2'>
-                <button onClick={Purchase} className='inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2' >
+                <button onClick={() => Purchase(task._id)} className='inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2' >
                   Purchase
                 </button>
             </div>

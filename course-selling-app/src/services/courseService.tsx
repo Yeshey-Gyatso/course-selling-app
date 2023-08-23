@@ -12,3 +12,10 @@ export async function GetCourse(){
    .then(response=>response.data)
    return result
 }
+
+export async function Purachased(userId,courseId){
+   const result = await httpAxios
+   .post(`/api/users/${userId}/${courseId}`)
+   .then(response=>response.data)
+   return result
+}
