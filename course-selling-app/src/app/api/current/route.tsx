@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { User } from "@/models";
 import { connectDb } from "@/helper/db";
 
-export async function GET(request:NextResponse){
+export async function GET(request){
     await connectDb();
     const authToken=request.cookies.get("authToken")?.value;
     // console.log(authToken);
